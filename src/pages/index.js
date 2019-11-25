@@ -4,13 +4,13 @@ import Banner from "../components/Banner"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import About from "../components/Home/About"
 import Services from "../components/Home/Services"
-import SimpleHero from "../components/SimpleHero"
+import StyledHero from "../components/StyledHero"
 
 
-export default () => (
+export default ({data}) => (
     <>
         <Layout>
-            <SimpleHero>
+            <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>>
                 <Banner title="continue exploring"
                         info=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, officiis."
             >
@@ -18,10 +18,21 @@ export default () => (
           explore tours
         </AniLink>
             </Banner>
-                </SimpleHero>
+                </StyledHero>
                 <About/>
                 <Services/>
         </Layout>
     </>
 
 )
+export const query = graphql`
+  query {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
