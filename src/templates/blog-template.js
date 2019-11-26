@@ -16,7 +16,8 @@ const Blog = ({ data }) => {
      renderNode:{
          "embedded-asset-block":node=> {
              console.log(node)
-             return (<div className = "rich">
+             return (
+             <div className = "rich">
                 <h3>This is awesome</h3>
                 {/* <img width="400" src={node.data.target.fields.file['en-US'].url}/> */}
                 <p>Images provided by David Goliath</p>
