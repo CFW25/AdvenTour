@@ -20,13 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      posts: allContentfulPost {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
+
     }
   `)
   data.tours.edges.forEach(({ node }) => {
