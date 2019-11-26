@@ -2,6 +2,7 @@ import React from 'react'
 import StyledHero from "../components/StyledHero"
 import Layout from '../components/Layout.js'
 import Contact from '../components/Contact/Contact'
+import { graphql } from 'gatsby'
 
 const contact = ({data}) => {
     return (
